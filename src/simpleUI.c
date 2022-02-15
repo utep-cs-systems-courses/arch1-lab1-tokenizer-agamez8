@@ -2,6 +2,6 @@
 
 void main()
 {
-  printf("Hello, welcome to Tokenizer!");
+  printf("Hello, welcome to Tokenizer!\n");
   
 }

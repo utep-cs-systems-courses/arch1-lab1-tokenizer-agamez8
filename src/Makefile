@@ -1,4 +1,4 @@
-# list object files
+#list object files
 CFLAGS=-g -O3 # -g for debug, -O3 for optimization
 
 # file dependencies
