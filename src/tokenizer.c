@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include "tokenizer.h"
 
 /* Returns true if c is a whitespace character */
 int space_char(char c)
@@ -68,11 +69,11 @@ char *copy_str(char *inStr, short len)
 
     for (i = 0; i < len; i++)
     {
-      copy[i] = inStr[i];
+      copy[i] = inStr[i]; // copy string
     }
-    copy[i] = '\0'
+    copy[i] = '\0' 
 
-    return copy;
+    return copy; 
 }
 
 /* Tokenize function */
