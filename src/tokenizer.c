@@ -65,13 +65,13 @@ int count_words(char *str)
 char *copy_str(char *inStr, short len)
 {
   int i = 0;
-  char *copy = (char *) malloc(sizeof(char) * (len + 1))
+  char *copy = (char *) malloc(sizeof(char) * (len + 1));
 
     for (i = 0; i < len; i++)
     {
       copy[i] = inStr[i]; // copy string
     }
-    copy[i] = '\0' 
+    copy[i] = '\0'; 
 
     return copy; 
 }
@@ -81,12 +81,19 @@ char **tokenize(char* str)
 {
   int word_count = count_words(str);
   char **token = (char **) malloc((word_count + 1) * sizeof(char*));
-
-  for (int i = 0; i < word_count; i++)
+  char* start = str;
+  char* end = word_terminator(str);
+  
+  for (int i = 0; i < word_count; i++) // iterate to find total words
   {
-    
+    if (i < 0)
+    {
+      start = word_start(end); // determine word start
+      end = word_terminator(start); // determine word end
+    }
+    // implement here
   }
-  return 0;
+  return token;
 }
 
 /* Prints all tokens */
