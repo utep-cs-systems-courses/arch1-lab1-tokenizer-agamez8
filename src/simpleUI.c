@@ -6,35 +6,35 @@
 
 int main()
 {
-  char menu_choice;
   char user_input[MAX];
   char **tokens;
+  List *ptr = init_history();
+  char *history;
+  int count;
   
-  while (menu_choice != 3)
+  while (user_input[0] != '2')
   {
     printf("Hello, welcome to Tokenizer!\n");
     printf("1. Tokenize string\n");
-    printf("2. Print history\n");
-    printf("3. Quit\n");
+    printf("2. Print History\n");
+    printf("3. Exit\n");
+    fgets(user_input, MAX, stdin);
 
-    scanf("%d", &menu_choice);
-
-    if (menu_choice == 1) // Tokenize
+    if (user_input[0] == '1')
     {
-      printf("Enter sentence to tokenize: ");
-      printf("\n");
+      printf("Enter:\n");
       fgets(user_input, MAX, stdin);
-      // tokens = tokenize(user_input);
-      // print_tokens(tokens);
-      // free_tokens(tokens);
-      printf(":)");
-      printf("\n");
+      // problem right here
+      tokens = tokenize(user_input);
     }
-    if (menu_choice == 2) // Print history
+    else if (user_input[0] == '2')
     {
-      printf("--- Printing History ---\n");
-      printf("\n");
+      printf("Printing History:\n");
     }
+    else if (user_input[0] == '3')
+    {
+      printf("Thank you for using Tokenizer!\n");
+      break;
+    }  
   }
-  printf("Thank you for using Tokenizer!\n");
 }

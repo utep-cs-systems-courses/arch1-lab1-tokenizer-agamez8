@@ -7,7 +7,7 @@
 List* init_history()
 {
   List *head = (List*) malloc(sizeof(List));
-  head -> root = NULL;
+  head -> root = NULL; // set head 
 
   return head;
 }
@@ -25,21 +25,36 @@ void add_history(List *list, char *str)
     temp -> str = str;
     temp -> next = item;
     temp -> next -> id = i;
-    i++;
+    i++; 
   }
 }
 
 /* Get history */
 char *get_history(List *list, int id)
 {
-  Item *temp = list -> root;
-  // implement here 
+  if (id < 0) // id does not exist
+  {
+    printf("Please try again.");
+    return "An error has occurred.";
+  }
+
+  Item *temp = list -> root; // set temp
+
+  while (temp != NULL)
+  {
+    if (temp -> id == id) // If id match
+    {
+      return temp -> str; // return string
+    }
+    temp = temp -> next; // search next 
+  }
+  return "An error has occurred.";
 }
 
 /* Print entire contents of list */
 void print_history(List *list)
 {
-  Item *temp = list -> root;
+  Item *temp = list -> root; // set temp
 
   while (temp != NULL) // while not empty
   {
@@ -60,3 +75,4 @@ void free_history(List *list)
   }
   free(list); // free list
 }
+
