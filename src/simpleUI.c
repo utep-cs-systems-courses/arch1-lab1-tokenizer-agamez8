@@ -2,36 +2,39 @@
 #include <stdlib.h>
 #include "tokenizer.h"
 #include "history.h"
-#define MAX 100
+#define MAX 200
 
 int main()
 {
-  char user_input[MAX];
+  char user_input[MAX], word[MAX];
   char **tokens;
-  List *ptr = init_history();
-  char *history;
   int count;
+  List *history = init_history();
   
-  while (user_input[0] != '2')
+  while (user_input[0] != '3')
   {
+    // display menu
     printf("Hello, welcome to Tokenizer!\n");
-    printf("1. Tokenize string\n");
-    printf("2. Print History\n");
+    printf("1. Tokenize String\n");
+    printf("2. Print history\n");
     printf("3. Exit\n");
-    fgets(user_input, MAX, stdin);
+    fgets(user_input, MAX, stdin); // get user input
 
-    if (user_input[0] == '1')
+    if (user_input[0] == '1') // tokenize
     {
-      printf("Enter:\n");
+      printf("Enter string to tokenize:\n");
       fgets(user_input, MAX, stdin);
-      // problem right here
       tokens = tokenize(user_input);
+      print_tokens(tokens);
+      add_history(history, user_input);
+      free_tokens(tokens);
     }
-    else if (user_input[0] == '2')
+    else if (user_input[0] == '2') // display history
     {
       printf("Printing History:\n");
+      print_history(history);
     }
-    else if (user_input[0] == '3')
+    else if (user_input[0] == '3') // exit tokenizer
     {
       printf("Thank you for using Tokenizer!\n");
       break;

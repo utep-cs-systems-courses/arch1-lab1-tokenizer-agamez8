@@ -83,7 +83,7 @@ static char *all_tests() {
         mu_run_test(test_string_length);
         mu_run_test(test_is_valid_character);
         mu_run_test(test_find_word_start);
-        mu_run_test(test_find_word_terminator);
+	mu_run_test(test_find_word_terminator);
         mu_run_test(test_count_words);
         mu_run_test(test_tokenize);
     }

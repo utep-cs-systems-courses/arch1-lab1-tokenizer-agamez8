@@ -1,0 +1,474 @@
+student@systems-vm:~/arch1-lab1-tokenizer-agamez8/src> make all
+make: Nothing to be done for 'all'.
+student@systems-vm:~/arch1-lab1-tokenizer-agamez8/src> make run
+./tokenizer
+Hello, welcome to Tokenizer!
+1. Tokenize String
+2. Print history
+3. Exit
+1
+Enter string to tokenize:
+hello
+
+make: *** [Makefile:19: run] Segmentation fault (core dumped)
+student@systems-vm:~/arch1-lab1-tokenizer-agamez8/src> make run
+./tokenizer
+Hello, welcome to Tokenizer!
+1. Tokenize String
+2. Print history
+3. Exit
+1
+Enter string to tokenize:
+hello 
+
+make: *** [Makefile:19: run] Segmentation fault (core dumped)
+student@systems-vm:~/arch1-lab1-tokenizer-agamez8/src> ./tokenizer 
+Hello, welcome to Tokenizer!
+1. Tokenize String
+2. Print history
+3. Exit
+1
+Enter string to tokenize:
+hello string
+
+Segmentation fault (core dumped)
+student@systems-vm:~/arch1-lab1-tokenizer-agamez8/src> make all
+cc -g -O3    -c -o tokenizer.o tokenizer.c
+tokenizer.c: In function ‘count_words’:
+tokenizer.c:61:10: warning: passing argument 1 of ‘printf’ makes pointer from integer without a cast [-Wint-conversion]
+   printf(count);
+          ^~~~~
+In file included from tokenizer.c:1:0:
+/usr/include/stdio.h:318:12: note: expected ‘const char * restrict’ but argument is of type ‘int’
+ extern int printf (const char *__restrict __format, ...);
+            ^~~~~~
+cc -o tokenizer -g -O3  tokenizer.o history.o simpleUI.o
+student@systems-vm:~/arch1-lab1-tokenizer-agamez8/src> make all
+cc -g -O3    -c -o tokenizer.o tokenizer.c
+cc -o tokenizer -g -O3  tokenizer.o history.o simpleUI.o
+student@systems-vm:~/arch1-lab1-tokenizer-agamez8/src> make run
+./tokenizer
+Hello, welcome to Tokenizer!
+1. Tokenize String
+2. Print history
+3. Exit
+1
+Enter string to tokenize:
+hello world
+2
+make: *** [Makefile:19: run] Segmentation fault (core dumped)
+student@systems-vm:~/arch1-lab1-tokenizer-agamez8/src> make run
+./tokenizer
+Hello, welcome to Tokenizer!
+1. Tokenize String
+2. Print history
+3. Exit
+1
+Enter string to tokenize:
+hello world hahaha hahah
+4
+make: *** [Makefile:19: run] Segmentation fault (core dumped)
+student@systems-vm:~/arch1-lab1-tokenizer-agamez8/src> make all
+cc -g -O3    -c -o tokenizer.o tokenizer.c
+cc -o tokenizer -g -O3  tokenizer.o history.o simpleUI.o
+student@systems-vm:~/arch1-lab1-tokenizer-agamez8/src> make run
+./tokenizer
+Hello, welcome to Tokenizer!
+1. Tokenize String
+2. Print history
+3. Exit
+1
+Enter string to tokenize:
+hello world
+CopiedhelloCopiedhello
+make: *** [Makefile:19: run] Segmentation fault (core dumped)
+student@systems-vm:~/arch1-lab1-tokenizer-agamez8/src> make run
+./tokenizer
+Hello, welcome to Tokenizer!
+1. Tokenize String
+2. Print history
+3. Exit
+1
+Enter string to tokenize:
+hello
+Copiedhello
+make: *** [Makefile:19: run] Segmentation fault (core dumped)
+student@systems-vm:~/arch1-lab1-tokenizer-agamez8/src> make all
+cc -g -O3    -c -o tokenizer.o tokenizer.c
+cc -o tokenizer -g -O3  tokenizer.o history.o simpleUI.o
+student@systems-vm:~/arch1-lab1-tokenizer-agamez8/src> make run
+./tokenizer
+Hello, welcome to Tokenizer!
+1. Tokenize String
+2. Print history
+3. Exit
+1
+Enter string to tokenize:
+hello
+Copiedhello
+make: *** [Makefile:19: run] Segmentation fault (core dumped)
+student@systems-vm:~/arch1-lab1-tokenizer-agamez8/src> make all
+cc -g -O3    -c -o tokenizer.o tokenizer.c
+cc -o tokenizer -g -O3  tokenizer.o history.o simpleUI.o
+student@systems-vm:~/arch1-lab1-tokenizer-agamez8/src> make run
+./tokenizer
+Hello, welcome to Tokenizer!
+1. Tokenize String
+2. Print history
+3. Exit
+1
+Enter string to tokenize:
+hello world
+done
+make: *** [Makefile:19: run] Segmentation fault (core dumped)
+student@systems-vm:~/arch1-lab1-tokenizer-agamez8/src> make all
+cc -g -O3    -c -o tokenizer.o tokenizer.c
+cc -o tokenizer -g -O3  tokenizer.o history.o simpleUI.o
+student@systems-vm:~/arch1-lab1-tokenizer-agamez8/src> make run
+./tokenizer
+Hello, welcome to Tokenizer!
+1. Tokenize String
+2. Print history
+3. Exit
+1
+Enter string to tokenize:
+hello world
+done
+make: *** [Makefile:19: run] Segmentation fault (core dumped)
+student@systems-vm:~/arch1-lab1-tokenizer-agamez8/src> make all
+cc -g -O3    -c -o tokenizer.o tokenizer.c
+tokenizer.c: In function ‘print_tokens’:
+tokenizer.c:102:21: warning: comparison between pointer and integer
+   while (*tokens[i] != NULL)
+                     ^~
+cc -o tokenizer -g -O3  tokenizer.o history.o simpleUI.o
+student@systems-vm:~/arch1-lab1-tokenizer-agamez8/src> make run
+./tokenizer
+Hello, welcome to Tokenizer!
+1. Tokenize String
+2. Print history
+3. Exit
+1
+Enter string to tokenize:
+hello world
+
+make: *** [Makefile:19: run] Segmentation fault (core dumped)
+student@systems-vm:~/arch1-lab1-tokenizer-agamez8/src> make all
+cc -g -O3    -c -o tokenizer.o tokenizer.c
+cc -o tokenizer -g -O3  tokenizer.o history.o simpleUI.o
+student@systems-vm:~/arch1-lab1-tokenizer-agamez8/src> make run
+./tokenizer
+Hello, welcome to Tokenizer!
+1. Tokenize String
+2. Print history
+3. Exit
+1
+Enter string to tokenize:
+hello world
+
+make: *** [Makefile:19: run] Segmentation fault (core dumped)
+student@systems-vm:~/arch1-lab1-tokenizer-agamez8/src> make all
+cc -g -O3    -c -o tokenizer.o tokenizer.c
+cc -g -O3    -c -o simpleUI.o simpleUI.c
+cc -o tokenizer -g -O3  tokenizer.o history.o simpleUI.o
+student@systems-vm:~/arch1-lab1-tokenizer-agamez8/src> make run
+./tokenizer
+Hello, welcome to Tokenizer!
+1. Tokenize String
+2. Print history
+3. Exit
+1
+Enter string to tokenize:
+hi alaln
+hello
+make: *** [Makefile:19: run] Segmentation fault (core dumped)
+student@systems-vm:~/arch1-lab1-tokenizer-agamez8/src> make all
+cc -g -O3    -c -o tokenizer.o tokenizer.c
+cc -g -O3    -c -o simpleUI.o simpleUI.c
+cc -o tokenizer -g -O3  tokenizer.o history.o simpleUI.o
+student@systems-vm:~/arch1-lab1-tokenizer-agamez8/src> make run
+./tokenizer
+Hello, welcome to Tokenizer!
+1. Tokenize String
+2. Print history
+3. Exit
+1
+Enter string to tokenize:
+hello world
+hello
+make: *** [Makefile:19: run] Segmentation fault (core dumped)
+student@systems-vm:~/arch1-lab1-tokenizer-agamez8/src> make all
+cc -g -O3    -c -o tokenizer.o tokenizer.c
+cc -o tokenizer -g -O3  tokenizer.o history.o simpleUI.o
+student@systems-vm:~/arch1-lab1-tokenizer-agamez8/src> make run
+./tokenizer
+Hello, welcome to Tokenizer!
+1. Tokenize String
+2. Print history
+3. Exit
+1
+Enter string to tokenize:
+hello world
+hello
+helloHello, welcome to Tokenizer!
+1. Tokenize String
+2. Print history
+3. Exit
+1
+Enter string to tokenize:
+adf asdf adsf
+hello
+adf
+adsf
+Hello, welcome to Tokenizer!
+1. Tokenize String
+2. Print history
+3. Exit
+3
+Thank you for using Tokenizer!
+student@systems-vm:~/arch1-lab1-tokenizer-agamez8/src> make all
+cc -g -O3    -c -o simpleUI.o simpleUI.c
+cc -o tokenizer -g -O3  tokenizer.o history.o simpleUI.o
+student@systems-vm:~/arch1-lab1-tokenizer-agamez8/src> make run
+./tokenizer
+Hello, welcome to Tokenizer!
+1. Tokenize String
+2. Print history
+3. Exit
+1
+Enter string to tokenize:
+hello world
+
+helloHello, welcome to Tokenizer!
+1. Tokenize String
+2. Print history
+3. Exit
+1
+Enter string to tokenize:
+hello world
+
+helloHello, welcome to Tokenizer!
+1. Tokenize String
+2. Print history
+3. Exit
+1
+Enter string to tokenize:
+world hello
+
+worldHello, welcome to Tokenizer!
+1. Tokenize String
+2. Print history
+3. Exit
+1
+Enter string to tokenize:
+hello world my name is alan
+
+hello
+my
+isHello, welcome to Tokenizer!
+1. Tokenize String
+2. Print history
+3. Exit
+3
+Thank you for using Tokenizer!
+student@systems-vm:~/arch1-lab1-tokenizer-agamez8/src> make all
+cc -g -O3    -c -o tokenizer.o tokenizer.c
+cc -o tokenizer -g -O3  tokenizer.o history.o simpleUI.o
+student@systems-vm:~/arch1-lab1-tokenizer-agamez8/src> make run
+./tokenizer
+Hello, welcome to Tokenizer!
+1. Tokenize String
+2. Print history
+3. Exit
+1
+Enter string to tokenize:
+hello world
+[hello]
+[world
+]
+Hello, welcome to Tokenizer!
+1. Tokenize String
+2. Print history
+3. Exit
+3
+Thank you for using Tokenizer!
+student@systems-vm:~/arch1-lab1-tokenizer-agamez8/src> make all
+cc -g -O3    -c -o tokenizer.o tokenizer.c
+cc -o tokenizer -g -O3  tokenizer.o history.o simpleUI.o
+student@systems-vm:~/arch1-lab1-tokenizer-agamez8/src> make run
+./tokenizer
+Hello, welcome to Tokenizer!
+1. Tokenize String
+2. Print history
+3. Exit
+1
+Enter string to tokenize:
+hello world my name is
+0: [hello]
+1: [world]
+2: [my]
+3: [name]
+4: [is
+]
+Hello, welcome to Tokenizer!
+1. Tokenize String
+2. Print history
+3. Exit
+1
+Enter string to tokenize:
+alan gamez
+0: [alan]
+1: [gamez
+]
+Hello, welcome to Tokenizer!
+1. Tokenize String
+2. Print history
+3. Exit
+3
+Thank you for using Tokenizer!
+student@systems-vm:~/arch1-lab1-tokenizer-agamez8/src> make all
+cc -g -O3    -c -o tokenizer.o tokenizer.c
+cc -o tokenizer -g -O3  tokenizer.o history.o simpleUI.o
+student@systems-vm:~/arch1-lab1-tokenizer-agamez8/src> make run
+./tokenizer
+Hello, welcome to Tokenizer!
+1. Tokenize String
+2. Print history
+3. Exit
+1
+Enter string to tokenize:
+alan gamez
+0: [alan]1: [gamez
+]Hello, welcome to Tokenizer!
+1. Tokenize String
+2. Print history
+3. Exit
+3
+Thank you for using Tokenizer!
+student@systems-vm:~/arch1-lab1-tokenizer-agamez8/src> make all
+cc -g -O3    -c -o tokenizer.o tokenizer.c
+cc -o tokenizer -g -O3  tokenizer.o history.o simpleUI.o
+student@systems-vm:~/arch1-lab1-tokenizer-agamez8/src> make run
+./tokenizer
+Hello, welcome to Tokenizer!
+1. Tokenize String
+2. Print history
+3. Exit
+1
+Enter string to tokenize:
+alan gamez
+0: [alan]
+1: [gamez
+]
+Hello, welcome to Tokenizer!
+1. Tokenize String
+2. Print history
+3. Exit
+3
+Thank you for using Tokenizer!
+student@systems-vm:~/arch1-lab1-tokenizer-agamez8/src> make a
+make: *** No rule to make target 'a'.  Stop.
+student@systems-vm:~/arch1-lab1-tokenizer-agamez8/src> 
+student@systems-vm:~/arch1-lab1-tokenizer-agamez8/src> make all
+cc -g -O3    -c -o tokenizer.o tokenizer.c
+cc -o tokenizer -g -O3  tokenizer.o history.o simpleUI.o
+student@systems-vm:~/arch1-lab1-tokenizer-agamez8/src> make run
+./tokenizer
+Hello, welcome to Tokenizer!
+1. Tokenize String
+2. Print history
+3. Exit
+1
+Enter string to tokenize:
+alan gamez
+0: alan
+1: gamez
+
+Hello, welcome to Tokenizer!
+1. Tokenize String
+2. Print history
+3. Exit
+2
+Printing History:
+student@systems-vm:~/arch1-lab1-tokenizer-agamez8/src> make all
+make: Nothing to be done for 'all'.
+student@systems-vm:~/arch1-lab1-tokenizer-agamez8/src> make run
+./tokenizer
+Hello, welcome to Tokenizer!
+1. Tokenize String
+2. Print history
+3. Exit
+1
+Enter string to tokenize:
+hello my name is alan and it is cold oustide
+0: hello
+1: my
+2: name
+3: is
+4: alan
+5: and
+6: it
+7: is
+8: cold
+9: oustide
+
+Hello, welcome to Tokenizer!
+1. Tokenize String
+2. Print history
+3. Exit
+3
+Thank you for using Tokenizer!
+student@systems-vm:~/arch1-lab1-tokenizer-agamez8/src> make all
+cc -g -O3    -c -o simpleUI.o simpleUI.c
+cc -o tokenizer -g -O3  tokenizer.o history.o simpleUI.o
+student@systems-vm:~/arch1-lab1-tokenizer-agamez8/src> make run
+./tokenizer
+Hello, welcome to Tokenizer!
+1. Tokenize String
+2. Print history
+3. Exit
+1
+Enter string to tokenize:
+hello world my name is alan
+0: hello
+1: world
+2: my
+3: name
+4: is
+5: alan
+
+Hello, welcome to Tokenizer!
+1. Tokenize String
+2. Print history
+3. Exit
+2
+Printing History:
+make: *** [Makefile:19: run] Segmentation fault (core dumped)
+student@systems-vm:~/arch1-lab1-tokenizer-agamez8/src> make all
+cc -g -O3    -c -o simpleUI.o simpleUI.c
+simpleUI.c: In function ‘main’:
+simpleUI.c:38:7: warning: implicit declaration of function ‘pirntf’; did you mean ‘printf’? [-Wimplicit-function-declaration]
+       pirntf("hello");
+       ^~~~~~
+       printf
+cc -o tokenizer -g -O3  tokenizer.o history.o simpleUI.o
+/usr/lib64/gcc/x86_64-suse-linux/7/../../../../x86_64-suse-linux/bin/ld: simpleUI.o: in function `main':
+/home/student/arch1-lab1-tokenizer-agamez8/src/simpleUI.c:38: undefined reference to `pirntf'
+collect2: error: ld returned 1 exit status
+make: *** [Makefile:10: tokenizer] Error 1
+student@systems-vm:~/arch1-lab1-tokenizer-agamez8/src> make all
+cc -g -O3    -c -o simpleUI.o simpleUI.c
+cc -o tokenizer -g -O3  tokenizer.o history.o simpleUI.o
+student@systems-vm:~/arch1-lab1-tokenizer-agamez8/src> make run
+./tokenizer
+Hello, welcome to Tokenizer!
+1. Tokenize String
+2. Print history
+3. Exit
+2
+Printing History:
+make: *** [Makefile:19: run] Segmentation fault (core dumped)
+student@systems-vm:~/arch1-lab1-tokenizer-agamez8/src> exit
+exit
+
+Process shell exited abnormally with code 2

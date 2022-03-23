@@ -19,46 +19,62 @@ void add_history(List *list, char *str)
   Item *item = (Item*) malloc(sizeof(Item));
   Item *temp = list -> root;
 
-  while (temp -> next != NULL) // while not empty
+  // find string length
+  int len = 0;
+  while (str[len] != '\0')
+    len++;
+
+  // get copy of string
+  item -> str = copy_str(str, len);
+  item -> next = NULL;
+
+  // set item id
+  if (temp == NULL)
   {
-    // add strings to list
-    temp -> str = str;
-    temp -> next = item;
-    temp -> next -> id = i;
-    i++; 
+    item -> id = i;
+    list -> root = item;
+    return;
   }
+
+  // increment id
+  while (temp -> next != NULL)
+  {
+    i++;
+    temp = temp -> next;
+  }
+  i++;
+  item -> id = i;
+  temp -> next = item; // store phrase
 }
 
 /* Get history */
 char *get_history(List *list, int id)
 {
-  if (id < 0) // id does not exist
+  if (id == 0) // id does not exist
   {
-    printf("Please try again.");
-    return "An error has occurred.";
+    return "ID not found.";
   }
 
   Item *temp = list -> root; // set temp
+  int i = 0;
 
-  while (temp != NULL)
+  for (i = 0; i < id; i++)
   {
-    if (temp -> id == id) // If id match
-    {
-      return temp -> str; // return string
-    }
-    temp = temp -> next; // search next 
+    temp = temp -> next;
   }
-  return "An error has occurred.";
+  
+  return temp -> str;
 }
 
 /* Print entire contents of list */
 void print_history(List *list)
 {
   Item *temp = list -> root; // set temp
-
-  while (temp != NULL) // while not empty
+  int i = 0;
+  
+  for (i = 0; temp != NULL; i++)
   {
-    printf("%s\n", temp -> str); // print all content
+    printf("%s\n", temp -> str); // print content
     temp = temp -> next;
   }
 }
@@ -70,8 +86,10 @@ void free_history(List *list)
 
   while (temp != NULL) // while not empty
   {
-    free(temp); // free content
     temp = temp -> next;
+    free(temp -> str); 
+    free(temp);
+    temp = list -> root;
   }
   free(list); // free list
 }

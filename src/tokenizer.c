@@ -5,7 +5,7 @@
 /* Returns true if c is a whitespace character */
 int space_char(char c)
 {
-  if (c == ' ' || '\t') // if c is a space or tab
+  if (c == ' ' || c == '\t') // if c is a space or tab
   {
     return 1; // true
   }
@@ -16,7 +16,7 @@ int space_char(char c)
 /* Returns true if c is NOT a whitespace character */
 int non_space_char(char c)
 {
-  if (c != ' ' || '\t') // if c is not a space or tab
+  if (c == ' ' || c == '\t' || c == '\0') // if c is not a space or tab
   {
     return 0; // false
   }
@@ -27,7 +27,7 @@ int non_space_char(char c)
 /* Return beginning of str */
 char *word_start(char *str)
 {
-  while (space_char(*str)) // while there is a whitespace
+  while (space_char(*str) == 1) // while there is a whitespace
   {
     str++; // increment pointer to find start
   }
@@ -37,7 +37,7 @@ char *word_start(char *str)
 /* Return end of word */
 char *word_terminator(char *word)
 {
-  while (non_space_char(*word)) // while there is no whitespace
+  while (non_space_char(*word) == 1) // while there is no whitespace
   {
     word++; // increment word pointer until end
   }
@@ -80,7 +80,7 @@ char **tokenize(char* str)
 {
   int word_count = count_words(str); // get word count
   char *end; // initalize end of word
-  char **token = (char**) malloc((word_count+1) * sizeof(char*));
+  char **token = (char**) malloc((word_count+1) * sizeof(char*)); 
 
   int i;
   for (i = 0; i < word_count; i++)
@@ -98,10 +98,9 @@ char **tokenize(char* str)
 void print_tokens(char **tokens)
 {
   int i = 0;
-
-  while (*tokens[i] != 0)
+  while (*tokens != 0)
   {
-    printf("\n%s", *tokens[i]); // print array of chars
+    printf("token[%i]: %s\n", i, *tokens); // print array of chars
     i++; // every index
     tokens++; // pointer in token
   }
